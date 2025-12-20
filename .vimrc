@@ -1,5 +1,5 @@
 
-set path=.,,,**
+set path+=**
 set splitbelow
 set nowrap
 
@@ -18,20 +18,16 @@ set incsearch
 
 set belloff=all
 
-colorscheme slate
-hi Normal guibg=NONE
-hi EndOfBuffer guibg=NONE
-hi SignColumn guibg=NONE
-hi ModeMsg guibg=NONE guifg=#ffffff
-hi MatchParen guibg=#d7875f guifg=#ffffff
+" hi Normal guibg=NONE
+" hi EndOfBuffer guibg=NONE
+" hi SignColumn guibg=NONE
+" hi ModeMsg guibg=NONE guifg=#ffffff
+" hi MatchParen guibg=#d7875f guifg=#ffffff
 
 let mapleader = " "
 
 nnoremap <leader>f :find 
-nnoremap <leader>e <CMD>Explore<CR>
 nnoremap <leader>pb <CMD>buffer #<CR>
-
-nnoremap <ESC> <CMD>nohlsearch<CR>
 nnoremap <leader>t <CMD>split <BAR> term<CR>
 
 vnoremap > >gv
@@ -39,10 +35,10 @@ vnoremap < <gv
 
 " window navigation
 
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+nnoremap <A-h> <C-\><C-n><C-w>h
+nnoremap <A-j> <C-\><C-n><C-w>j
+nnoremap <A-k> <C-\><C-n><C-w>k
+nnoremap <A-l> <C-\><C-n><C-w>l
 
 inoremap <A-h> <C-\><C-n><C-w>h
 inoremap <A-j> <C-\><C-n><C-w>j

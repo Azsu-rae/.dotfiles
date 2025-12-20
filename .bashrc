@@ -116,4 +116,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"
+export PATH="${HOME}/node_modules/tree-sitter-cli:${PATH}"
