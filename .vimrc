@@ -18,11 +18,8 @@ set incsearch
 
 set belloff=all
 
-" hi Normal guibg=NONE
-" hi EndOfBuffer guibg=NONE
-" hi SignColumn guibg=NONE
-" hi ModeMsg guibg=NONE guifg=#ffffff
-" hi MatchParen guibg=#d7875f guifg=#ffffff
+set termguicolors
+
 
 let mapleader = " "
 
