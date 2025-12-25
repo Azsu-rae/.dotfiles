@@ -2,6 +2,7 @@
 set path+=**
 set splitbelow
 set nowrap
+set laststatus=3
 
 set expandtab
 set tabstop=4
