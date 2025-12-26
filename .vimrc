@@ -1,8 +1,10 @@
 
 set path+=**
+set wildignore+=*/__pycache__/*,*/.git/*
+
+set laststatus=3
 set splitbelow
 set nowrap
-set laststatus=3
 
 set expandtab
 set tabstop=4
