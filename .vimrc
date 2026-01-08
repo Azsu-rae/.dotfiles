@@ -1,6 +1,6 @@
 
 set path+=**
-set wildignore+=*/__pycache__/*,*/.git/*
+set wildignore+=*/.git/*
 
 set laststatus=3
 set splitbelow
@@ -25,8 +25,15 @@ set termguicolors
 
 let mapleader = " "
 
-nnoremap <leader>f :find 
-nnoremap <leader>pb <CMD>buffer #<CR>
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
+nnoremap <leader>y "+y
+vnoremap <leader>Y "+Y
+
+nnoremap <leader>b <CMD>buffer #<CR>
 nnoremap <leader>t <CMD>split <BAR> term<CR>
 
 vnoremap > >gv
