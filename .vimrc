@@ -20,21 +20,25 @@ set ignorecase
 set incsearch
 
 set belloff=all
-
 set termguicolors
 
 let mapleader = " "
+
+nnoremap <C-k> 5k
+vnoremap <C-k> 5k
+nnoremap <C-j> 5j
+vnoremap <C-j> 5j
 
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+vnoremap <leader>y "+y
 nnoremap <leader>y "+y
-vnoremap <leader>Y "+Y
 
 nnoremap <leader>b <CMD>buffer #<CR>
-nnoremap <leader>t <CMD>split <BAR> term<CR>
+nnoremap <leader>t <CMD>split <BAR> term<CR>i
 
 vnoremap > >gv
 vnoremap < <gv
