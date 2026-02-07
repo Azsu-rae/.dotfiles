@@ -117,3 +117,5 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="${HOME}/node_modules/tree-sitter-cli:${PATH}"
+
+. "$HOME/.local/bin/env"

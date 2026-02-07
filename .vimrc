@@ -2,6 +2,10 @@
 set path+=**
 set wildignore+=*/.git/*
 
+set textwidth=138
+
+set cursorline
+
 set laststatus=3
 set splitbelow
 set nowrap
@@ -24,10 +28,7 @@ set termguicolors
 
 let mapleader = " "
 
-nnoremap <C-k> 5k
-vnoremap <C-k> 5k
-nnoremap <C-j> 5j
-vnoremap <C-j> 5j
+" inoremap <C-e> <ESC>ea
 
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
