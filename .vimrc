@@ -2,7 +2,7 @@
 set path+=**
 set wildignore+=*/.git/*
 
-set textwidth=138
+set textwidth=129
 
 set cursorline
 
@@ -13,6 +13,7 @@ set nowrap
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 
 set number
 set relativenumber

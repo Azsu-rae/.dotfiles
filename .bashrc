@@ -119,3 +119,4 @@ fi
 export PATH="${HOME}/node_modules/tree-sitter-cli:${PATH}"
 
 . "$HOME/.local/bin/env"
+. "$HOME/.cargo/env"
