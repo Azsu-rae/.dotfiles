@@ -4,10 +4,9 @@ set wildignore+=*/.git/*
 
 set textwidth=114
 
-set cursorline
-
 set laststatus=3
 set splitbelow
+set cursorline
 set nowrap
 
 set expandtab
@@ -29,8 +28,6 @@ set termguicolors
 
 let mapleader = " "
 
-" inoremap <C-e> <ESC>ea
-
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
@@ -41,13 +38,3 @@ nnoremap <leader>y "+y
 
 nnoremap <leader>b <CMD>buffer #<CR>
 nnoremap <leader>t <CMD>split <BAR> term<CR>i
-
-vnoremap > >gv
-vnoremap < <gv
-
-" window navigation
-
-tnoremap <C-w>h <C-\><C-n><C-w>h
-tnoremap <C-w>j <C-\><C-n><C-w>j
-tnoremap <C-w>k <C-\><C-n><C-w>k
-tnoremap <C-w>l <C-\><C-n><C-w>l
