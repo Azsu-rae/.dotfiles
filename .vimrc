@@ -2,7 +2,7 @@
 set path+=**
 set wildignore+=*/.git/*
 
-set textwidth=129
+set textwidth=114
 
 set cursorline
 
