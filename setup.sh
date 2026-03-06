@@ -10,4 +10,6 @@ ln -sfn $HOME/.dotfiles/alacritty/ $HOME/.config/alacritty
 ln -sfn $HOME/.dotfiles/fish $HOME/.config/fish
 ln -sfn $HOME/.dotfiles/neovide $HOME/.config/neovide
 
+# install homebrew first
+
 brew install --cask font-jetbrains-mono-nerd-font
