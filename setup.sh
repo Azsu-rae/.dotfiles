@@ -1,35 +1,107 @@
 #! /bin/bash
 
+set -e
+
+# TODO make sure that eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)" is in .bashrc
+
+# install software
+if ! command -v fish &> /dev/null; then
+    brew install fish
+else
+    echo "fish is already installed!"
+fi
+
+if ! command -v nvim &> /dev/null; then
+    brew install nvim
+else
+    echo "nvim is already installed!"
+fi
+
+if ! brew list --cask | grep jetbrains; then
+    brew install --cask font-jetbrains-mono-nerd-font
+fi
+
+if ! brew list | grep tmux; then
+    brew install tmux
+fi
+
+
+# single files
+ln -sfn $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
+ln -sfn $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
+ln -sfn $HOME/.dotfiles/vimrc.vim $HOME/.vimrc
+
+# DIRs
+
 mkdir -p ~/.config
 
-# the -p means parents.
-#
-# It does two useful things:
-#
-# Creates parent directories automatically if they don't exist.
-# Doesn't error if the directory already exists.
+ans=""
 
-ln -sfn $HOME/.dotfiles/vimrc.vim $HOME/.vimrc
-ln -sfn $HOME/.dotfiles/vimrc.vim $HOME/.config/nvim/vimrc.vim
+# NVIM
+if [ -d "$HOME/.config/nvim" ]; then
+    read -p "Existing \$HOME/.config/nvim. Overwrite [Y/n]? " ans
+    if [[ ! "$ans" =~ ^[Yy]$ ]]; then
+        ans=""
+    fi
+fi
+if [[ ! -d "$HOME/.config/nvim" ]] || [[ -n "$ans" ]]; then
+    rm -rf $HOME/.config/nvim
+    git clone https://github.com/Azsu-rae/nvim $HOME/.config/nvim
+    ln -sfn $HOME/.dotfiles/vimrc.vim $HOME/.config/nvim/vimrc.vim
+fi
 
-# -sfn
-# s -> symbolic:
-# create a symbolic link (symlink) instead of a hard link
-# f -> force:
-# remove the destination file if it already exists
-# n -> no dereference:
-# treat the destination symlink as a normal file instead of following it
+# ALACRITTY
+if [ -d "$HOME/.config/alacritty" ]; then
+    read -p "Existing \$HOME/.config/alacritty. Overwrite [Y/n]? " ans
+    if [[ ! "$ans" =~ ^[Yy]$ ]]; then
+        ans=""
+    fi
+fi
+if [[ ! -d "$HOME/.config/alacritty" ]] || [[ -n "$ans" ]]; then
+    rm -rf $HOME/.config/alacritty
+    ln -sfn $HOME/.dotfiles/alacritty/ $HOME/.config/alacritty
+fi
 
-ln -sfn $HOME/.dotfiles/.tmux.conf $HOME/
-ln -sfn $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
+# NEOVIDE
+if [ -d "$HOME/.config/neovide" ]; then
+    read -p "Existing \$HOME/.config/neovide. Overwrite [Y/n]? " ans
+    if [[ ! "$ans" =~ ^[Yy]$ ]]; then
+        ans=""
+    fi
+fi
+if [[ ! -d "$HOME/.config/neovide" ]] || [[ -n "$ans" ]]; then
+    rm -rf $HOME/.config/neovide
+    ln -sfn $HOME/.dotfiles/neovide/ $HOME/.config/neovide
+fi
 
-rm $HOME/.config/alacritty
-ln -sfn $HOME/.dotfiles/alacritty/ $HOME/.config/alacritty
+# FISH
+if [ -d "$HOME/.config/fish/functions" ]; then
+    read -p "Existing \$HOME/.config/fish/functions. Overwrite [Y/n]? " ans
+    if [[ ! "$ans" =~ ^[Yy]$ ]]; then
+        ans=""
+    fi
+fi
+if [[ ! -d "$HOME/.config/fish/functions" ]] || [[ -n "$ans" ]]; then
+    mkdir -p $HOME/.config/fish
+    rm -rf $HOME/.config/fish/functions
+    ln -sfn $HOME/.dotfiles/fish/functions/ $HOME/.config/fish/functions
+fi
+if [ ! -f "$HOME/.config/fish/appended" ]; then
+    touch $HOME/.config/fish/appended
+    cat $HOME/.dotfiles/fish/config.fish-to-append >> $HOME/.config/fish/config.fish
+fi
 
-ln -sfn $HOME/.dotfiles/fish/functions $HOME/.config/fish/functions
+# additional configs
 
-ln -sfn $HOME/.dotfiles/neovide $HOME/.config/neovide
+if [ ! -d "$HOME/.ssh" ]; then
+    ssh-keygen -t ed25519 -C "aitameurilyas@gmail.com"
+fi
 
-# install homebrew first
-
-# brew install --cask font-jetbrains-mono-nerd-font
+if [[ ! $(which fish) = "$SHELL" ]]; then
+    if ! grep -q "fish" /etc/shells; then
+        which fish | sudo tee -a /etc/shells
+    fi
+    chsh -s $(which fish)
+    echo ""
+    echo "Log back for the fish shell to take effect"
+fi
