@@ -1,3 +1,8 @@
+### Requirements
+
+only`homebrew` and its dependencies are required. Everything else is handled by `setup.sh`
+
+
 ### Useful software to have
 
 - tldr

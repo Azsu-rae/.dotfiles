@@ -7,21 +7,25 @@ set -e
 # install software
 if ! command -v fish &> /dev/null; then
     brew install fish
-else
-    echo "fish is already installed!"
 fi
 
 if ! command -v nvim &> /dev/null; then
     brew install nvim
-else
-    echo "nvim is already installed!"
 fi
 
-if ! brew list --cask | grep jetbrains; then
+if ! brew list --cask | grep jetbrains &> /dev/null; then
     brew install --cask font-jetbrains-mono-nerd-font
 fi
 
-if ! brew list | grep tmux; then
+if ! brew list | grep node &> /dev/null; then
+    brew install npm
+fi
+
+if ! brew list | grep rust &> /dev/null; then
+    brew install rust
+fi
+
+if ! brew list | grep tmux &> /dev/null; then
     brew install tmux
 fi
 
