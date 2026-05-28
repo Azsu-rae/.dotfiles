@@ -29,6 +29,9 @@ if ! brew list | grep tmux &> /dev/null; then
     brew install tmux
 fi
 
+if ! command -v tree &> /dev/null; then
+    brew install tree
+fi
 
 # single files
 ln -sfn $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
