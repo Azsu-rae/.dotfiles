@@ -17,15 +17,15 @@ if ! brew list --cask | grep jetbrains &> /dev/null; then
     brew install --cask font-jetbrains-mono-nerd-font
 fi
 
-if ! brew list | grep node &> /dev/null; then
+if ! command -v node &> /dev/null; then
     brew install npm
 fi
 
-if ! brew list | grep rust &> /dev/null; then
+if ! command rust &> /dev/null; then
     brew install rust
 fi
 
-if ! brew list | grep tmux &> /dev/null; then
+if ! command tmux &> /dev/null; then
     brew install tmux
 fi
 
