@@ -1,5 +1,5 @@
 
-set textwidth=117
+set textwidth=130
 set wildignorecase
 set path+=**
 
@@ -40,8 +40,8 @@ nnoremap <leader>y "+y
 nnoremap <leader>b <CMD>b #<CR>
 nnoremap <leader>t <CMD>split <BAR> term<CR>i
 
-nnoremap <M-l> 2zl
-nnoremap <M-h> 2zh
+nnoremap <M-l> 3zl
+nnoremap <M-h> 3zh
 
-nnoremap <S-ScrollWheelUp> 2zh
-nnoremap <S-ScrollWheelDown> 2zl
+nnoremap <S-ScrollWheelUp> 3zh
+nnoremap <S-ScrollWheelDown> 3zl
