@@ -3,7 +3,7 @@
 padding = { x = 0, y = 0 }
 opacity = 1
 # opacity = 0.95
-decorations = "None"
+# decorations = "None"
 startup_mode = "Maximized"
 
 [font]
