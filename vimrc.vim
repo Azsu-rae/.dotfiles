@@ -1,5 +1,5 @@
 
-set textwidth=130
+set textwidth=90
 set wildignorecase
 set path+=**
 
@@ -27,6 +27,8 @@ set termguicolors
 
 let mapleader = " "
 
+inoremap <C-f> <cmd>Telescope find_files<CR>
+
 nnoremap <leader>% <CMD>echo expand('%')<CR>
 
 nnoremap <leader>p "+p
@@ -38,7 +40,7 @@ vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 
 nnoremap <leader>b <CMD>b #<CR>
-nnoremap <leader>t <CMD>split <BAR> term<CR>i
+tnoremap <ESC><ESC> <C-\><C-n>
 
 nnoremap <M-l> 3zl
 nnoremap <M-h> 3zh

@@ -1,0 +1,136 @@
+/* @theme tryout */
+
+@import "default";
+
+.definition {
+  background: #e8f4fd;
+  border-left: 8px solid #5bc0de;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 8px;
+}
+
+section.columns {
+  display: grid;
+  grid-template-columns: 1fr 50%;
+  height: 100%;
+  column-gap: 2rem;
+  align-items: center;
+}
+
+
+section.columns p {
+  grid-column: 2;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.columns img {
+  max-width: 100%;
+  max-height: 70vh;
+}
+
+section.small-columns {
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  height: 100%;
+  column-gap: 2rem;
+  align-items: center;
+}
+
+.first-column {
+  grid-column: 1;
+}
+
+.first-column>ul {
+  margin-top: 1.5em;
+}
+
+ul ul {
+  margin-top: 0.25em;
+}
+
+section.small-columns p {
+  grid-column: 2;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.small-columns img {
+  max-width: 100%;
+  max-height: 70vh;
+}
+
+section.two_col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
+section.two-col .col ul {
+  margin: 0;
+}
+
+.below {
+  margin-top: 1.5em;
+}
+
+.above {
+  margin-bottom: 1.5em;
+}
+
+/* ---------- Numbered title bar ---------- */
+
+/* counters:
+   - "chapter" only advances on slides you mark as class="chapter"
+   - "sub" advances on every slide, and resets whenever a new chapter starts
+   add class="chapter" to a <section> (Marp: ```<!-- _class: chapter -->```)
+   whenever you want to start a new "1.", "2.", "3." block. */
+
+section {
+  position: relative;
+  padding-top: 4.5rem;
+}
+
+section.subchapter>h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+  background: #1c3d5a;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  border-radius: 0;
+}
+
+
+/* invisible table */
+
+section.invisible-table table {
+  border: none;
+  width: auto;
+}
+
+section.invisible-table table thead {
+  display: none;
+}
+
+section.invisible-table table tr,
+section.invisible-table table tr:nth-child(2n) {
+  background: none;
+  border: none;
+}
+
+section.invisible-table table td {
+  border: none;
+  padding: 0.3em 1em;
+  font-size: 1.1em;
+}

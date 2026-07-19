@@ -97,6 +97,9 @@ if [ ! -f "$HOME/.config/fish/appended" ]; then
     touch $HOME/.config/fish/appended
     cat $HOME/.dotfiles/fish/config.fish-to-append >> $HOME/.config/fish/config.fish
 fi
+if [ ! -f "$HOME/.dotfiles/marp-themes/" ]; then
+    ln -sfn $HOME/.dotfiles/marp-themes/ $HOME/marp-themes
+fi
 
 # additional configs
 
