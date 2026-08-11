@@ -27,8 +27,6 @@ set termguicolors
 
 let mapleader = " "
 
-inoremap <C-f> <cmd>Telescope find_files<CR>
-
 tnoremap <ESC><ESC> <C-\><C-n>
 
 nnoremap <S-ScrollWheelUp> 3zh
