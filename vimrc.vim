@@ -1,4 +1,6 @@
 
+colorscheme habamax
+
 set textwidth=90
 set wildignorecase
 set path+=**
