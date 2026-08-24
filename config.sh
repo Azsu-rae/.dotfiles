@@ -1,42 +1,8 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 set -e
 
-# TODO make sure that eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)" is in .bashrc
-
-# install software
-if ! command -v fish &> /dev/null; then
-    brew install fish
-fi
-
-if ! command -v nvim &> /dev/null; then
-    brew install nvim
-fi
-
-if ! brew list --cask | grep jetbrains &> /dev/null; then
-    brew install --cask font-jetbrains-mono-nerd-font
-fi
-
-if ! command -v node &> /dev/null; then
-    brew install npm
-fi
-
-if ! command rust &> /dev/null; then
-    brew install rust
-fi
-
-if ! command tmux &> /dev/null; then
-    brew install tmux
-fi
-
-if ! command -v tree &> /dev/null; then
-    brew install tree
-fi
-
-# single files
-ln -sfn $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
-ln -sfn $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
-ln -sfn $HOME/.dotfiles/vimrc.vim $HOME/.vimrc
+source install.sh
 
 # DIRs
 
@@ -67,6 +33,18 @@ fi
 if [[ ! -d "$HOME/.config/alacritty" ]] || [[ -n "$ans" ]]; then
     rm -rf $HOME/.config/alacritty
     ln -sfn $HOME/.dotfiles/alacritty/ $HOME/.config/alacritty
+fi
+
+# GHOSTTY
+if [ -d "$HOME/.config/ghostty" ]; then
+    read -p "Existing \$HOME/.config/ghostty. Overwrite [Y/n]? " ans
+    if [[ ! "$ans" =~ ^[Yy]$ ]]; then
+        ans=""
+    fi
+fi
+if [[ ! -d "$HOME/.config/ghostty" ]] || [[ -n "$ans" ]]; then
+    rm -rf $HOME/.config/ghostty
+    ln -sfn $HOME/.dotfiles/ghostty/ $HOME/.config/ghostty
 fi
 
 # NEOVIDE
