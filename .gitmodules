@@ -1,0 +1,3 @@
+[submodule "apps/keyd"]
+	path = apps/keyd
+	url = https://github.com/rvaiya/keyd
