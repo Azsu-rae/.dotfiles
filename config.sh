@@ -35,6 +35,18 @@ if [[ ! -d "$HOME/.config/alacritty" ]] || [[ -n "$ans" ]]; then
     ln -sfn $HOME/.dotfiles/alacritty/ $HOME/.config/alacritty
 fi
 
+# KEYD
+if [ -d "$HOME/.config/keyd" ]; then
+    read -p "Existing \$HOME/.config/alacritty. Overwrite [Y/n]? " ans
+    if [[ ! "$ans" =~ ^[Yy]$ ]]; then
+        ans=""
+    fi
+fi
+if [[ ! -d "$HOME/.config/keyd" ]] || [[ -n "$ans" ]]; then
+    rm $HOME/.config/keyd/app.conf
+    ln -sfn $HOME/.dotfiles/keyd/ $HOME/.config/keyd/app.conf
+fi
+
 # GHOSTTY
 if [ -d "$HOME/.config/ghostty" ]; then
     read -p "Existing \$HOME/.config/ghostty. Overwrite [Y/n]? " ans

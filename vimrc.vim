@@ -35,13 +35,3 @@ set termguicolors
 
 nnoremap <S-ScrollWheelUp> 3zh
 nnoremap <S-ScrollWheelDown> 3zl
-
-call plug#begin()
-
-" List your plugins here
-Plug 'tpope/vim-sensible'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-
-call plug#end()

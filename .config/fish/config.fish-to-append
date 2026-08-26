@@ -1,2 +1,4 @@
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
+
+keyd-application-mapper -v
