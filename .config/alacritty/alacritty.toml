@@ -21,7 +21,7 @@ save_to_clipboard = true
 
 [colors.primary]
 foreground = "#dcd7ba"
-background = "#1C1C1C"
+background = "#1e1e2e"
 
 [colors.cursor]
 text = "#1f1f28"
